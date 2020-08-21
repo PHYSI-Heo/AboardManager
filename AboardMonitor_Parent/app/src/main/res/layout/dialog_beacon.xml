@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".BeaconDialog"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/btn_scan"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/btn_corner_effect"
+        android:text="Scan"
+        android:layout_margin="8dp"/>
+
+    <TextView
+        android:id="@+id/tv_sub_beacons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BEACONs"
+        android:textStyle="bold"
+        android:layout_below="@id/btn_scan"
+        android:layout_marginTop="16dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_beacons"
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/tv_sub_beacons"/>
+
+    <ProgressBar
+        android:id="@+id/pb_scanning"
+        android:layout_width="40dp"
+        android:layout_height="24dp"
+        android:layout_above="@id/rv_beacons"
+        android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>

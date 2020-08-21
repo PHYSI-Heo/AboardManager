@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_frame"
+    android:background="@drawable/bg_anim_gradation"
+    tools:context=".RegisterActivity">
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="112dp"
+        android:layout_height="112dp"
+        android:src="@drawable/img_logo"
+        android:padding="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_below="@id/iv_logo"
+        android:layout_centerHorizontal="true"
+        android:text="Setup Client Info."
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_title"
+        android:layout_marginTop="24dp"
+        android:background="@android:color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp">
+
+            <TextView
+                android:id="@+id/tv_sub_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="원생 이름"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"/>
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_sub_name"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/tv_sub_addr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_name"
+                android:layout_marginTop="8dp"
+                android:text="주소"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_sub_addr"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/tv_sub_phone_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_address"
+                android:layout_marginTop="8dp"
+                android:text="연락처"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_phone_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_sub_phone_num"
+                android:inputType="phone" />
+
+            <TextView
+                android:id="@+id/tv_sub_beacon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_phone_num"
+                android:layout_marginTop="24dp"
+                android:text="Beacon Address"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_beacon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_sub_beacon"
+                android:enabled="false"
+                android:textColor="@android:color/black"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/btn_scan"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:background="@drawable/btn_corner_effect"
+                android:layout_alignParentEnd="true"
+                android:layout_above="@id/et_beacon"
+                android:layout_marginEnd="8dp"
+                android:textSize="12sp"
+                android:text="Scan" />
+
+            <TextView
+                android:id="@+id/tv_sub_push_token"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_beacon"
+                android:layout_marginTop="24dp"
+                android:text="PUSH TOKEN"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_push_token"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_sub_push_token"
+                android:enabled="false"
+                android:textColor="@android:color/black"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/btn_get_token"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:background="@drawable/btn_corner_effect"
+                android:layout_alignParentEnd="true"
+                android:layout_above="@id/et_push_token"
+                android:layout_marginEnd="8dp"
+                android:textSize="12sp"
+                android:text="GET" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/et_push_token">
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_corner_effect"
+                    android:text="Cancel"
+                    android:layout_margin="8dp"/>
+
+                <Button
+                    android:id="@+id/btn_setup"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_corner_effect"
+                    android:text="Update" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

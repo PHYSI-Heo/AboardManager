@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "681911345218",
+    "firebase_url": "https://aboard-monitor.firebaseio.com",
+    "project_id": "aboard-monitor",
+    "storage_bucket": "aboard-monitor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:681911345218:android:8bfcfae98102cc53678ddb",
+        "android_client_info": {
+          "package_name": "com.physis.aboard.monitor.parent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "681911345218-37205j84jdo9bl151dvl4nq0hor438b3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBv8fu01Pc3QcDEapCZxpXo8daJVNHZL34"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "681911345218-37205j84jdo9bl151dvl4nq0hor438b3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

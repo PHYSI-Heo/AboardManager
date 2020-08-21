@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">차량 승하차 알림 애플리케이션</string>
+
+
+    <string name="notification_channel_id" translatable="false">AMS_PUSH_ID</string>
+    <string name="notification_channel_name">AMS_PUSH_NAME</string>
+
+</resources>

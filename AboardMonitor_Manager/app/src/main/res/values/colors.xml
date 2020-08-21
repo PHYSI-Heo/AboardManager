@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#778EE2</color>
+    <color name="colorPrimaryDark">#345bdb</color>
+    <color name="colorAccent">#5F85FC</color>
+
+    <color name="colorButtonEffect">#59F52F</color>
+    <color name="colorButtonBasic">#D3D3D3</color>
+
+    <color name="colorStateDisable">#919191</color>
+    <color name="colorStateGetOn">#62D643</color>
+    <color name="colorStateGetOff">#E6A728</color>
+</resources>
