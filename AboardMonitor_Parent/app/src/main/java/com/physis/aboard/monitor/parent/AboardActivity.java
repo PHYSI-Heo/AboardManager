@@ -26,10 +26,10 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.physis.aboard.monitor.parent.dialog.NotifyDialog;
+import com.physis.aboard.monitor.parent.utils.NotifyDialog;
 import com.physis.aboard.monitor.parent.http.HttpPacket;
 import com.physis.aboard.monitor.parent.http.HttpRequester;
-import com.physis.aboard.monitor.parent.push.FCMMessagingService;
+import com.physis.aboard.monitor.parent.utils.FCMMessagingService;
 
 import org.json.JSONArray;
 import org.json.JSONException;

@@ -8,15 +8,12 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.physis.aboard.monitor.parent.http.HttpPacket;
-import com.physis.aboard.monitor.parent.push.FCMMessagingService;
-import com.physis.aboard.monitor.parent.storage.ClientPreference;
+import com.physis.aboard.monitor.parent.utils.FCMMessagingService;
+import com.physis.aboard.monitor.parent.utils.ClientPreference;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -63,7 +60,7 @@ public class IntroActivity extends AppCompatActivity {
             }
 
             if(!accessStatus){
-                Toast.makeText(getApplicationContext(), "APP PERMISSION DENIED.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "App Permission Denied!", Toast.LENGTH_SHORT).show();
                 finish();
             }else{
                 nextActivity();

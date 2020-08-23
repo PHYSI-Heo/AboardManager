@@ -2,15 +2,14 @@ package com.physis.aboard.monitor.manager.http;
 
 public class HttpPacket {
 
-    public static final String BASEURL = "http://192.168.1.12:3000";
-//    public static final String BASEURL = "http://192.168.219.103:3000";
+    //    public static final String BASEURL = "http://192.168.1.12:3000";
+    public static final String BASEURL = "http://192.168.219.106:3000";
 
 
     public static final String URL_CLIENT_REGISTER = BASEURL + "/register/client";
     public static final String URL_CLIENT_GET_INFO = BASEURL + "/get/client";
     public static final String URL_CLIENT_UPDATE_INFO = BASEURL + "/update/client";
     public static final String URL_GET_BEACONs = BASEURL + "/get/beacon/list";
-    public static final String URL_GET_CLIENTs = BASEURL + "/get/clients";
     public static final String URL_UPDATE_ABOARD_STATE = BASEURL + "/update/aboard/state";
 
 

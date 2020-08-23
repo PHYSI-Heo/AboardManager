@@ -2,8 +2,8 @@ package com.physis.aboard.monitor.parent.http;
 
 public class HttpPacket {
 
-    public static final String BASEURL = "http://192.168.1.12:3000";
-//    public static final String BASEURL = "http://192.168.219.103:3000";
+//    public static final String BASEURL = "http://192.168.1.12:3000";
+    public static final String BASEURL = "http://192.168.219.106:3000";
 
 
     public static final String URL_CLIENT_REGISTER = BASEURL + "/register/client";
@@ -23,10 +23,11 @@ public class HttpPacket {
     public static final String PARAMS_CLIENT_ABOARD_TOKEN = "token";
     public static final String PARAMS_CLIENT_ABOARD_LAT = "lat";
     public static final String PARAMS_CLIENT_ABOARD_LON = "lon";
-    public static final String PARAMS_MAX_NO = "max(no)";
+    public static final String PARAMS_INSERT_ID = "insertId";
 
     public static final String KEY_RES_CODE = "resCode";
     public static final String KEY_RES_ROWS = "rows";
+    public static final String KEY_RES_HEADER = "header";
 
     public static final String REQ_SUCCESS  = "1001";
 }

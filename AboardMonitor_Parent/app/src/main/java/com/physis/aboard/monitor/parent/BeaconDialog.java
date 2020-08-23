@@ -13,7 +13,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -23,7 +22,6 @@ import com.physis.aboard.monitor.parent.ble.BluetoothLEManager;
 import com.physis.aboard.monitor.parent.http.HttpPacket;
 import com.physis.aboard.monitor.parent.http.HttpRequester;
 import com.physis.aboard.monitor.parent.list.BeaconAdapter;
-import com.physis.aboard.monitor.parent.storage.ClientPreference;
 
 import org.json.JSONArray;
 import org.json.JSONException;

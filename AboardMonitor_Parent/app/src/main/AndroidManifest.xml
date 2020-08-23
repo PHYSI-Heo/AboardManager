@@ -44,7 +44,7 @@
             android:value="@integer/google_play_services_version" />
 
 
-        <service android:name=".push.FCMMessagingService"
+        <service android:name=".utils.FCMMessagingService"
             tools:ignore="ExportedService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

@@ -18,20 +18,20 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.physis.aboard.monitor.manager.data.ClientInfo;
-import com.physis.aboard.monitor.manager.dialog.NotifyDialog;
+import com.physis.aboard.monitor.manager.utils.NotifyDialog;
 import com.physis.aboard.monitor.manager.http.HttpPacket;
 import com.physis.aboard.monitor.manager.http.HttpRequester;
 import com.physis.aboard.monitor.manager.list.ClientAdapter;
-import com.physis.aboard.monitor.manager.push.FCMMessageTransmitter;
+import com.physis.aboard.monitor.manager.utils.FCMMessageTransmitter;
 
 import org.altbeacon.beacon.Beacon;
 import org.altbeacon.beacon.BeaconConsumer;
 import org.altbeacon.beacon.BeaconManager;
 import org.altbeacon.beacon.BeaconParser;
-import org.altbeacon.beacon.MonitorNotifier;
 import org.altbeacon.beacon.RangeNotifier;
 import org.altbeacon.beacon.Region;
 import org.json.JSONArray;
@@ -60,6 +60,9 @@ public class MainActivity extends AppCompatActivity implements ClientAdapter.OnC
     private String currentLatitude, currentLongitude;
 
     private BeaconManager beaconManager;
+
+    private TextView tvScanBlink;
+    private boolean isBlink = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -149,10 +152,11 @@ public class MainActivity extends AppCompatActivity implements ClientAdapter.OnC
             public void didRangeBeaconsInRegion(Collection<Beacon> beacons, Region region) {
                 if (beacons.size() > 0) {
                     for (Beacon beacon : beacons) {
-                        Log.e(TAG, "Address : " + beacon.getBluetoothAddress() + ", distance(m) : " + beacon.getDistance());
-                        Log.e(TAG, "Rssi : " + beacon.getRssi() + ", tx : " + beacon.getTxPower());
+                        Log.e(TAG, "Address : " + beacon.getBluetoothAddress() + ", Rssi : " + beacon.getRssi());
                         checkAboardStatus(beacon.getBluetoothAddress(), beacon.getRssi());
                     }
+                    isBlink = !isBlink;
+                    tvScanBlink.setBackgroundResource(isBlink ? R.color.colorScanBlink : R.color.colorAccent);
                 }
             }
         });
@@ -174,12 +178,12 @@ public class MainActivity extends AppCompatActivity implements ClientAdapter.OnC
         if(pos == -1)   return;
 
 //        String state = rssi > ABOARD_START_SCOPE ? "1" : (rssi < ABOARD_END_SCOPE ? "2" : "3");
-        String state = rssi > ABOARD_START_SCOPE ? "1" : "2";
-        Log.e(TAG, "Aboard state : " + state);
+        String state = rssi > ABOARD_END_SCOPE ? "1" : "2";
 
         if(clients.get(pos).getState().equals(state))
             return;
 
+        Log.e(TAG, "Update State :" + state);
         String currentTime = dateFormat.format(new Date());
         clients.get(pos).changeStatus(state, currentTime);
         clients.get(pos).setLatLng(currentLatitude, currentLongitude);
@@ -227,7 +231,7 @@ public class MainActivity extends AppCompatActivity implements ClientAdapter.OnC
     }
 
     private void requestClientInfos(){
-        HttpRequester requester = new HttpRequester("POST", HttpPacket.URL_GET_CLIENTs, null);
+        HttpRequester requester = new HttpRequester("POST", HttpPacket.URL_CLIENT_GET_INFO, null);
         requester.execute();
         requester.setOnResponseListener(this);
     }
@@ -265,6 +269,8 @@ public class MainActivity extends AppCompatActivity implements ClientAdapter.OnC
         rvClients.setLayoutManager(itemLayoutManager);
         rvClients.setAdapter(clientAdapter = new ClientAdapter());
         clientAdapter.setOnSelectedIndexListener(this);
+
+        tvScanBlink = findViewById(R.id.tv_scan_blink);
     }
 
 }

@@ -10,4 +10,6 @@
     <color name="colorStateDisable">#919191</color>
     <color name="colorStateGetOn">#62D643</color>
     <color name="colorStateGetOff">#E6A728</color>
+
+    <color name="colorScanBlink">#5BEA35</color>
 </resources>

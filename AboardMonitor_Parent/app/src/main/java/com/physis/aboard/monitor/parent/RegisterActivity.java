@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.physis.aboard.monitor.parent.http.HttpPacket;
 import com.physis.aboard.monitor.parent.http.HttpRequester;
-import com.physis.aboard.monitor.parent.storage.ClientPreference;
+import com.physis.aboard.monitor.parent.utils.ClientPreference;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,7 +25,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private static final int REQ_SCAN_BEACON = 3011;
 
     private EditText etName, etAddress, etPhoneNum, etBeaconAddr, etPushToken;
-
     private String clientID = null;
 
     @Override
@@ -82,8 +81,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 JSONObject resObj = new JSONObject(responseData);
                 if(resObj.getString(HttpPacket.KEY_RES_CODE).equals(HttpPacket.REQ_SUCCESS)){
                     if(url.equals(HttpPacket.URL_CLIENT_REGISTER)){
-                        String clientNo = resObj.getJSONArray(HttpPacket.KEY_RES_ROWS).getJSONObject(0)
-                                .getString(HttpPacket.PARAMS_MAX_NO);
+                        String clientNo = resObj.getJSONObject(HttpPacket.KEY_RES_HEADER).getString(HttpPacket.PARAMS_INSERT_ID);
                         ClientPreference.setClientID(getApplicationContext(), clientNo);
                         startActivity(new Intent(RegisterActivity.this, AboardActivity.class)
                                 .putExtra(HttpPacket.PARAMS_CLIENT_NO, clientNo));

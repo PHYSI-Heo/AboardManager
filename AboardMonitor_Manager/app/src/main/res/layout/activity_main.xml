@@ -42,12 +42,21 @@
         android:focusable="true"
         android:background="?android:attr/selectableItemBackground"/>
 
+    <TextView
+        android:id="@+id/tv_scan_blink"
+        android:layout_width="128dp"
+        android:layout_height="4dp"
+        android:background="@color/colorAccent"
+        android:layout_below="@id/tv_title"
+        android:layout_marginTop="8dp"
+        android:layout_centerHorizontal="true"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/white"
         android:layout_below="@id/tv_title"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:paddingHorizontal="8dp"
         android:paddingVertical="8dp">
 

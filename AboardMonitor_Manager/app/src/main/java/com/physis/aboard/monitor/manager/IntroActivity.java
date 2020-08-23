@@ -69,7 +69,7 @@ public class IntroActivity extends AppCompatActivity {
             }
 
             if(!accessStatus){
-                Toast.makeText(getApplicationContext(), "App Permission Denine!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "App Permission Denied!", Toast.LENGTH_SHORT).show();
                 finish();
             }else{
                 nextActivity();
