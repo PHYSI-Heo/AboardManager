@@ -10,7 +10,7 @@
 * Parent App
 1. [./http/HttpPacket.java] File -> BASEURL 정보 변경 (개인서버 IP 주소) 
 2. [AndroidManifest.xml] File -> Google Map API Key 정보 변경 (line 41)
-ref - https://developers.google.com/maps/documentation/android-sdk/get-api-key?hl=ko
+> ref - https://developers.google.com/maps/documentation/android-sdk/get-api-key?hl=ko
 
 * Manager App
 1. [./http/HttpPacket.java] File -> BASEURL 정보 변경 (개인서버 IP 주소) 
