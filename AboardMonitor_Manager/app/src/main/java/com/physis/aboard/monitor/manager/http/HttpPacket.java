@@ -2,8 +2,8 @@ package com.physis.aboard.monitor.manager.http;
 
 public class HttpPacket {
 
-    //    public static final String BASEURL = "http://192.168.1.12:3000";
-    public static final String BASEURL = "http://192.168.219.106:3000";
+        public static final String BASEURL = "http://192.168.1.12:3000";
+//    public static final String BASEURL = "http://192.168.219.106:3000";
 
 
     public static final String URL_CLIENT_REGISTER = BASEURL + "/register/client";

@@ -87,6 +87,7 @@ module.exports.query = (type, table, params, target) => {
           sql += ", ";
         } 
       }
+      
     }else{
       sql += "*";
     }
